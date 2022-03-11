@@ -3,6 +3,7 @@ package com.dicoding.testingapplikasi
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import java.lang.StringBuilder
 import kotlin.math.max
 import kotlin.random.Random
@@ -16,8 +17,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val textHello = findViewById<TextView>(R.id.tv_helloworld)
+
 
         val kucing = Animal("Meooow", 6.0, 2, true)
+        textHello.text = kucing.getAnimalInfo
         val animalInfo = kucing.getAnimalInfo
         Log.d("test1", "cek $animalInfo")
     }
